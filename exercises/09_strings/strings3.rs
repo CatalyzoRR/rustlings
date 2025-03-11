@@ -11,8 +11,7 @@ fn compose_me(input: &str) -> String {
 fn replace_me(input: &str) -> String {
     // TODO: Replace "cars" in the string with "balloons".
     if let Some(index) = input.find("cars") {
-        let s = format!("{}baloons{}", &input[0..index + 1], &input[index + 1..0]);
-        return s;
+        format!("{}balloons{}", &input[0..index], &input[index + 4..])
     } else {
         return input.to_string();
     }
