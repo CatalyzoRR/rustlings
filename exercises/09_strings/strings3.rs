@@ -1,13 +1,21 @@
 fn trim_me(input: &str) -> &str {
     // TODO: Remove whitespace from both ends of a string.
+    input.trim()
 }
 
 fn compose_me(input: &str) -> String {
     // TODO: Add " world!" to the string! There are multiple ways to do this.
+    return format!("{input} world!");
 }
 
 fn replace_me(input: &str) -> String {
     // TODO: Replace "cars" in the string with "balloons".
+    if let Some(index) = input.find("cars") {
+        let s = format!("{}baloons{}", &input[0..index + 1], &input[index + 1..0]);
+        return s;
+    } else {
+        return input.to_string();
+    }
 }
 
 fn main() {
@@ -33,13 +41,7 @@ mod tests {
 
     #[test]
     fn replace_a_string() {
-        assert_eq!(
-            replace_me("I think cars are cool"),
-            "I think balloons are cool",
-        );
-        assert_eq!(
-            replace_me("I love to look at cars"),
-            "I love to look at balloons",
-        );
+        assert_eq!(replace_me("I think cars are cool"), "I think balloons are cool");
+        assert_eq!(replace_me("I love to look at cars"), "I love to look at balloons");
     }
 }
