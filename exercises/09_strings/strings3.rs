@@ -5,7 +5,7 @@ fn trim_me(input: &str) -> &str {
 
 fn compose_me(input: &str) -> String {
     // TODO: Add " world!" to the string! There are multiple ways to do this.
-    return format!("{input} world!");
+    format!("{input} world!")
 }
 
 fn replace_me(input: &str) -> String {
@@ -13,7 +13,7 @@ fn replace_me(input: &str) -> String {
     if let Some(index) = input.find("cars") {
         format!("{}balloons{}", &input[0..index], &input[index + 4..])
     } else {
-        return input.to_string();
+        input.to_string()
     }
 }
 
